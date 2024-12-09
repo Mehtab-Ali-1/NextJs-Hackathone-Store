@@ -126,9 +126,29 @@ const Navbar: React.FC = () => {
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <div className="md:hidden flex flex-col items-start bg-white shadow-lg px-4 py-2">
-          <Link href="/shop" className="py-2">
-            Shop
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Link href="/shop" className="flex items-center text-nowrap	">
+                Shop <IoIosArrowDown className="ml-1" />
+              </Link>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="backdrop-blur-xl">
+              <DropdownMenuLabel>Menu</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href="/new-arrivals">Men's</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/product-list">Women's</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/casual">Casual</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/product-list">Brands</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link href="/product-list" className="py-2">
             ON Sale
           </Link>
